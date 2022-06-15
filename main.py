@@ -5,7 +5,6 @@ from enemy import Enemy
 from field import Field
 from level1 import level1
 pygame.init()
-
 WIDTH = 800
 HEIGHT = 600
 screen = pygame.display.set_mode((WIDTH,HEIGHT))

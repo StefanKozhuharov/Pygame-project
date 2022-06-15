@@ -3,6 +3,7 @@ from player import Player
 from enemy import Enemy
 from field import Field
 from borders import Border
+from level3 import level3
 pygame.init()
 
 FPS = 30
@@ -66,7 +67,7 @@ def level2():
         if player.draw(screen).collidelist([enemy.draw(screen), enemy2.draw(screen), enemy3.draw(screen), enemy4.draw(screen)]) != -1:
             player.reset_position()
         if player.draw(screen).collidelist([level_end.draw(screen)]) != -1:
-            print('Finished')
+            level3()
     def draw_level2():
         screen.fill((183, 175, 250))
         screen.blit(field_image, (100,150))
