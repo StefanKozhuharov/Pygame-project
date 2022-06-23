@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 from player import Player
 from enemy import Enemy
@@ -104,3 +106,4 @@ def level1():
         update_level1()
         draw_level1()
     pygame.quit()
+    sys.exit()

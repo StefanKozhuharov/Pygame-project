@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 from player import Player
 from enemy import Enemy
 from field import Field

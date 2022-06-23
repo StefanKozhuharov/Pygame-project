@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 from player4 import Player
 from enemy3 import Enemy3
 from enemy import Enemy
@@ -9,6 +9,16 @@ pygame.init()
 WIDTH = 800
 HEIGHT = 600
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
+font = pygame.font.Font("assets/font.ttf", 32)
+victory_text = font.render("You win!", True, (255, 255, 255))
+
+def victory():
+    screen.fill((183, 175, 250))
+    screen.blit(victory_text, (275, 75))
+    pygame.display.update()
+    pygame.time.delay(3000)
+    pygame.quit()
+
 def level4():
     is_running = True
 
@@ -41,8 +51,6 @@ def level4():
     border9 = Border(39, 515, 742, 1)
     border10 = Border(760, 200, 1, 324)
     borders = [border1, border2, border3, border4, border5, border6, border7, border8, border9, border10]
-    font = pygame.font.Font("assets/font.ttf", 32)
-
 
     def update_level4():
         keys = pygame.key.get_pressed()
@@ -69,7 +77,7 @@ def level4():
             player.deaths += 1
 
         if player.draw(screen).collidelist([level_end.draw(screen)]) != -1:
-            print('Finished')
+            print("Finished")
 
     def draw_level4():
         screen.fill((183, 175, 250))
